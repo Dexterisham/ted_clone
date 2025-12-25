@@ -375,6 +375,13 @@ h4,
     margin-top: 16px;
 }
 
+/* --- Load More --- */
+.load-more-container {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .header-inner {
