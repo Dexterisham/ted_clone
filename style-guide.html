@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TED Visual Style Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-section {
+            margin-bottom: 60px;
+            padding: 32px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .guide-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 8px;
+            font-family: monospace;
+            display: block;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 24px;
+        }
+
+        .color-swatch {
+            height: 100px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .spacing-viz {
+            background-color: rgba(230, 43, 30, 0.1);
+            border: 1px dashed var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            font-weight: bold;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">TED <span
+                    style="font-weight: normal; font-size: 14px; margin-left: 10px; color: #666;">Style Guide</span></a>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 48px; padding-bottom: 80px;">
+
+        <div style="margin-bottom: 60px; max-width: 800px;">
+            <h1>Visual Design System</h1>
+            <p style="font-size: 18px; color: #666; margin-top: 16px;">
+                A collection of typography, colors, and spacing rules that define the clean, modern TED aesthetic.
+            </p>
+        </div>
+
+        <!-- Typography Section -->
+        <section class="guide-section">
+            <h2
+                style="margin-bottom: 32px; padding-bottom: 16px; border-bottom: 2px solid var(--color-primary); display: inline-block;">
+                Typography</h2>
+
+            <div style="display: grid; gap: 40px;">
+                <!-- H1 -->
+                <div>
+                    <h1>Header 1: Ideas worth spreading</h1>
+                    <span class="guide-label">Helvetica Neue Bold / 40px / Line-height 1.1</span>
+                </div>
+
+                <!-- H2 -->
+                <div>
+                    <h2>Header 2: The newest talks</h2>
+                    <span class="guide-label">Helvetica Neue Bold / 28px</span>
+                </div>
+
+                <!-- H3 -->
+                <div>
+                    <h3>Header 3: Talk title card example</h3>
+                    <span class="guide-label">Helvetica Neue Bold / 24px</span>
+                </div>
+
+                <!-- Body -->
+                <div style="max-width: 600px;">
+                    <p><strong>Body Text:</strong> This is an example of the standard body text used across the site. It
+                        ensures readability with a comfortable line height and clean sans-serif font family. The spacing
+                        between lines is optimized for long-form reading as well as short descriptions.</p>
+                    <span class="guide-label">Helvetica Neue Regular / 16px / Line-height 1.5</span>
+                </div>
+
+                <!-- Meta -->
+                <div>
+                    <div class="meta">Posted Jan 2024 • 1.2M views • Speaker Name</div>
+                    <span class="guide-label">Helvetica Neue Regular / 14px / Color Gray-600</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colors Section -->
+        <section class="guide-section">
+            <h2
+                style="margin-bottom: 32px; padding-bottom: 16px; border-bottom: 2px solid var(--color-primary); display: inline-block;">
+                Color Palette</h2>
+
+            <div class="color-grid">
+                <div>
+                    <div class="color-swatch" style="background-color: var(--color-primary);"></div>
+                    <strong>TED Red</strong>
+                    <span class="guide-label">#E62B1E</span>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background-color: var(--color-black);"></div>
+                    <strong>Deep Black</strong>
+                    <span class="guide-label">#111111</span>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background-color: var(--color-gray-600);"></div>
+                    <strong>Secondary Text</strong>
+                    <span class="guide-label">#666666</span>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background-color: var(--color-gray-100);"></div>
+                    <strong>Light Gray</strong>
+                    <span class="guide-label">#E5E5E5</span>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background-color: var(--color-gray-50); border: 1px solid #ddd;">
+                    </div>
+                    <strong>Background Gray</strong>
+                    <span class="guide-label">#F7F7F7</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacing Section -->
+        <section class="guide-section">
+            <h2
+                style="margin-bottom: 32px; padding-bottom: 16px; border-bottom: 2px solid var(--color-primary); display: inline-block;">
+                Spacing System</h2>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px; align-items: end;">
+                <div>
+                    <div class="spacing-viz" style="width: 100%; height: 16px;">16px</div>
+                    <span class="guide-label">Paragraph Spacing</span>
+                </div>
+                <div>
+                    <div class="spacing-viz" style="width: 100%; height: 24px;">24px</div>
+                    <span class="guide-label">Card Padding</span>
+                </div>
+                <div>
+                    <div class="spacing-viz" style="width: 100%; height: 40px;">40px</div>
+                    <span class="guide-label">Element Gap</span>
+                </div>
+                <div>
+                    <div class="spacing-viz" style="width: 100%; height: 64px;">64px</div>
+                    <span class="guide-label">Section Spacing</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>

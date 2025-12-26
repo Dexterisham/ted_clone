@@ -1,6 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("TED Clone Loaded");
 
+    // --- Mobile Menu Toggle ---
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navWrapper = document.querySelector('.nav-wrapper');
+
+    if (menuToggle && navWrapper) {
+        menuToggle.addEventListener('click', () => {
+            navWrapper.classList.toggle('active');
+            menuToggle.classList.toggle('active'); // For burger animation if needed
+        });
+    }
+
+    // --- Discover Slider Scroll ---
+    const topicsWrapper = document.getElementById('topicsWrapper');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if (topicsWrapper && prevBtn && nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            topicsWrapper.scrollBy({ left: 200, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            topicsWrapper.scrollBy({ left: -200, behavior: 'smooth' });
+        });
+    }
+
     // --- Load More Functionality ---
     const loadMoreBtn = document.getElementById('loadMoreBtn');
     const videoGrid = document.querySelector('.video-grid');
