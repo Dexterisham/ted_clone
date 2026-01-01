@@ -1730,3 +1730,414 @@ h4,
         flex-direction: column;
     }
 }
+
+/* --- Trending Ideas (AI Redesign) --- */
+.trending-header {
+    border-bottom: 2px solid #ccc;
+    /* Heavier underline like reference */
+    margin-bottom: 40px;
+    padding-bottom: 8px;
+}
+
+.trending-title {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-black);
+}
+
+.trending-intro {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    margin-bottom: 48px;
+}
+
+.topic-huge {
+    font-size: 140px;
+    line-height: 0.8;
+    font-weight: 800;
+    letter-spacing: -4px;
+    color: var(--color-black);
+}
+
+.topic-desc-block {
+    max-width: 500px;
+    padding-top: 16px;
+    /* Align visual top with huge text */
+}
+
+.topic-desc-block p {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.browse-link {
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: underline;
+    color: var(--color-black);
+}
+
+/* Grid Layout */
+.trending-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* 2/3 and 1/3 roughly */
+    gap: 48px;
+}
+
+/* Featured Large Card */
+.featured-trend {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.trend-thumb-large img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.trend-content-large .trend-category {
+    color: var(--color-primary);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.trend-title-large {
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.trend-title-large a {
+    color: var(--color-black);
+}
+
+.trend-title-large a:hover {
+    color: var(--color-primary);
+}
+
+.trend-excerpt {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-gray-900);
+    margin-bottom: 12px;
+}
+
+.trend-meta {
+    font-size: 14px;
+    color: var(--color-gray-600);
+}
+
+/* Sidebar Cards */
+.sidebar-trend {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.trend-card-small {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.trend-thumb-small {
+    position: relative;
+}
+
+.trend-thumb-small img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.trend-title-small {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 4px;
+}
+
+.trend-content-small .trend-category {
+    color: var(--color-primary);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .trending-intro {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .topic-huge {
+        font-size: 80px;
+    }
+
+    .trending-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Newsletter Section Dark Redesign --- */
+.section-newsletters-main {
+    background-color: #191919;
+    padding: 64px 0;
+    color: white;
+}
+
+.newsletter-dark-grid {
+    display: flex;
+    gap: 64px;
+    align-items: flex-start;
+}
+
+/* Cards Column */
+.nl-cards-column {
+    display: flex;
+    gap: 24px;
+    flex: 1;
+    /* Take up remaining space */
+}
+
+/* Card Styling */
+.nl-card-dark {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    /* Fixed width per card */
+    flex-shrink: 0;
+}
+
+.nl-freq {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.nl-visual {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Specific Brands */
+.visual-blue {
+    background-color: #2D5BFF;
+    /* TED Blue */
+}
+
+.nl-brand-text {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.visual-white-red {
+    background-color: white;
+    border: 4px solid #E62B1E;
+}
+
+.nl-brand-text-red {
+    color: black;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 0.9;
+    text-align: center;
+}
+
+.visual-image {
+    background-color: #5D2C97;
+}
+
+.visual-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.nl-brand-overlay {
+    position: absolute;
+    font-weight: 900;
+    font-size: 32px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.visual-lightblue {
+    background-color: #B2C8EB;
+}
+
+.nl-brand-text-tech {
+    color: black;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 400;
+    text-align: center;
+}
+
+.nl-brand-text-tech strong {
+    display: block;
+    font-weight: 900;
+    font-size: 28px;
+}
+
+.nl-text-content h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: white;
+}
+
+.nl-text-content p {
+    font-size: 12px;
+    color: #ccc;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    min-height: 32px;
+}
+
+/* Select Button */
+.nl-select-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 0;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+
+.nl-select-btn:hover {
+    background-color: #e6e6e6;
+}
+
+.plus-icon {
+    font-size: 18px;
+    line-height: 0;
+    font-weight: 400;
+}
+
+/* Form Column */
+.nl-form-column {
+    width: 340px;
+    flex-shrink: 0;
+}
+
+.nl-main-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.nl-main-desc {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.nl-dark-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.nl-input {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 2px;
+}
+
+.nl-submit-btn {
+    width: 100%;
+    /* Or auto width */
+    padding: 16px;
+    background-color: #999;
+    /* Grey disabled look until input? Or primary */
+    color: black;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.nl-legal {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.4;
+}
+
+.nl-legal a {
+    text-decoration: underline;
+    color: #ccc;
+}
+
+/* Responsive Newsletter */
+@media (max-width: 1100px) {
+    .newsletter-dark-grid {
+        flex-direction: column-reverse;
+        gap: 48px;
+    }
+
+    .nl-form-column {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .nl-cards-column {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .nl-cards-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .nl-card-dark {
+        width: 100%;
+    }
+}
