@@ -50,29 +50,31 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="container">
-            <!-- Main Feature -->
-            <div class="hero-featured">
-                <div class="hero-info">
-                    <span class="hero-category">Science</span>
-                    <h1>How nearly dying helped me discover my own cure (and many more)</h1>
-                    <p class="hero-description">Physician-scientist David Fajgenbaum was dying from a rare disease that
-                        didn't have a cure — until he discovered a lifesaving drug that wasn't originally intended for
-                        his condition. In an astonishing talk, he shares how his near-death experience led him to
-                        cofound the nonprofit Every Cure, which is using AI to uncover hidden treatments in existing
-                        medicines in order to save lives. (This ambitious idea is part of The Audacious...</p>
-                    <div class="hero-meta">David Fajgenbaum<br>437K plays · 4 months</div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1576267423048-15c0040fec78?q=80&w=1000&auto=format&fit=crop"
-                        alt="David Fajgenbaum">
-                </div>
-            </div>
+        <div class="container hero-container-relative">
+            <div class="hero-slider-track" id="heroTrack">
+                <!-- Slide 1: Featured Main Talk -->
+                <article class="hero-slide featured-slide">
+                    <div class="hero-info">
+                        <span class="hero-category">Science</span>
+                        <h1>How nearly dying helped me discover my own cure (and many more)</h1>
+                        <p class="hero-description">Physician-scientist David Fajgenbaum was dying from a rare disease
+                            that
+                            didn't have a cure — until he discovered a lifesaving drug that wasn't originally intended
+                            for
+                            his condition. In an astonishing talk, he shares how his near-death experience led him to
+                            cofound the nonprofit Every Cure, which is using AI to uncover hidden treatments in existing
+                            medicines in order to save lives. (This ambitious idea is part of The Audacious...</p>
+                        <div class="hero-meta">David Fajgenbaum<br>437K plays · 4 months</div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1576267423048-15c0040fec78?q=80&w=1000&auto=format&fit=crop"
+                            alt="David Fajgenbaum">
+                        <span class="duration mobile-only">14:20</span>
+                    </div>
+                </article>
 
-            <!-- Sub Grid -->
-            <div class="hero-subgrid">
-                <!-- Card 1 -->
-                <article class="hero-sub-card">
+                <!-- Slide 2: Card 1 -->
+                <article class="hero-slide sub-slide">
                     <div class="sub-thumb">
                         <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=600&auto=format&fit=crop"
                             alt="Thumb">
@@ -85,8 +87,8 @@
                     </div>
                 </article>
 
-                <!-- Card 2 -->
-                <article class="hero-sub-card">
+                <!-- Slide 3: Card 2 -->
+                <article class="hero-slide sub-slide">
                     <div class="sub-thumb">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop"
                             alt="Thumb">
@@ -99,8 +101,8 @@
                     </div>
                 </article>
 
-                <!-- Card 3 -->
-                <article class="hero-sub-card">
+                <!-- Slide 4: Card 3 -->
+                <article class="hero-slide sub-slide">
                     <div class="sub-thumb">
                         <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=600&auto=format&fit=crop"
                             alt="Thumb">
@@ -114,8 +116,8 @@
                     </div>
                 </article>
 
-                <!-- Card 4 -->
-                <article class="hero-sub-card">
+                <!-- Slide 5: Card 4 -->
+                <article class="hero-slide sub-slide">
                     <div class="sub-thumb">
                         <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=600&auto=format&fit=crop"
                             alt="Thumb">
@@ -128,6 +130,30 @@
                     </div>
                 </article>
             </div>
+
+            <!-- Mobile Controls -->
+            <div class="hero-mobile-controls">
+                <div class="hero-dots">
+                    <!-- JS will populate dots -->
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Arrows (Overlay) -->
+            <button class="mobile-nav-btn prev" aria-label="Previous Slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="mobile-nav-btn next" aria-label="Next Slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
         </div>
     </section>
 

@@ -12,52 +12,62 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Hero Slider ---
-    const heroScrollContainer = document.querySelector('.hero-scroll-container');
-    const heroPrevBtn = document.getElementById('heroPrevBtn');
-    const heroNextBtn = document.getElementById('heroNextBtn');
+    // --- Hero Slider (Mobile/Responsive) ---
+    const heroTrack = document.getElementById('heroTrack');
+    const heroPrevBtn = document.querySelector('.mobile-nav-btn.prev');
+    const heroNextBtn = document.querySelector('.mobile-nav-btn.next');
+    const heroDotsContainer = document.querySelector('.hero-dots');
     const heroSlides = document.querySelectorAll('.hero-slide');
 
-    if (heroScrollContainer && heroSlides.length > 0) {
-        let currentSlide = 0;
-        const totalSlides = heroSlides.length;
+    if (heroTrack && heroSlides.length > 0) {
+        // Generate Dots if not present or just manage active state
+        // (HTML has 5 static dots, but let's ensure they match slide count if we want to be dynamic, 
+        //  or just use the existing ones if they match. 5 slides in HTML, 5 dots in HTML.)
 
-        const updateHeroSlider = () => {
-            heroScrollContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        const dots = heroDotsContainer.querySelectorAll('.dot');
 
-            // Logic to show/hide arrows if not cyclic (optional, or cyclic)
-            // For now, let's keep it simple: 
-            if (currentSlide === 0) {
-                heroPrevBtn.classList.add('hidden');
-            } else {
-                heroPrevBtn.classList.remove('hidden');
-            }
+        // Scroll Event to Update Dots
+        const updateActiveDot = () => {
+            const scrollLeft = heroTrack.scrollLeft;
+            const slideWidth = heroTrack.clientWidth;
+            const index = Math.round(scrollLeft / slideWidth);
+
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
         };
 
+        heroTrack.addEventListener('scroll', updateActiveDot);
+
+        // Arrow Navigation
         if (heroNextBtn) {
             heroNextBtn.addEventListener('click', () => {
-                if (currentSlide < totalSlides - 1) {
-                    currentSlide++;
-                    updateHeroSlider();
-                } else {
-                    // Loop back to start (optional)
-                    currentSlide = 0; // Uncomment to loop
-                    updateHeroSlider();
-                }
+                const slideWidth = heroTrack.clientWidth;
+                heroTrack.scrollBy({ left: slideWidth, behavior: 'smooth' });
             });
         }
 
         if (heroPrevBtn) {
             heroPrevBtn.addEventListener('click', () => {
-                if (currentSlide > 0) {
-                    currentSlide--;
-                    updateHeroSlider();
-                }
+                const slideWidth = heroTrack.clientWidth;
+                heroTrack.scrollBy({ left: -slideWidth, behavior: 'smooth' });
             });
         }
 
-        // Initialize state
-        updateHeroSlider();
+        // Dot Navigation
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                const slideWidth = heroTrack.clientWidth;
+                heroTrack.scrollTo({ left: slideWidth * i, behavior: 'smooth' });
+            });
+        });
+
+        // Initial check
+        updateActiveDot();
     }
 
 
