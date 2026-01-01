@@ -27,7 +27,9 @@
     --spacing-card-padding: 24px;
     --spacing-section: 64px;
 
-    --font-stack: "Helvetica Neue", Arial, sans-serif;
+    --spacing-section: 64px;
+
+    --font-stack: "Inter", "Helvetica Neue", Arial, sans-serif;
 
     --container-max-width: 1280px;
     --container-padding: 24px;
@@ -40,6 +42,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+.hidden {
+    display: none !important;
 }
 
 body {
@@ -110,10 +116,19 @@ h4,
 }
 
 .logo {
-    color: var(--color-primary);
-    font-size: 26px;
-    font-weight: 800;
-    margin-right: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 40px;
+}
+
+.logo-tagline {
+    font-size: 14px;
+    font-weight: 400;
+    /* Regular weight */
+    color: var(--color-gray-600);
+    letter-spacing: normal;
+    white-space: nowrap;
 }
 
 .nav-wrapper {
@@ -148,9 +163,12 @@ h4,
 }
 
 .main-nav a {
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 700;
     color: var(--color-black);
+    padding: 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .main-nav a:hover {
@@ -164,109 +182,190 @@ h4,
 }
 
 .login-link {
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-black);
+    letter-spacing: 0.5px;
 }
 
 .membership-btn {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--color-primary);
-    border: 1px solid var(--color-gray-200);
-    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 800;
+    /* Extra bold */
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 10px 16px;
     border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: all var(--transition-fast);
 }
 
 .membership-btn:hover {
-    border-color: var(--color-primary);
-    background-color: #fff0f0;
+    background-color: #cc2015;
+    /* Darker red */
+    border-color: #cc2015;
 }
 
-/* --- Hero Section --- */
+.search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--color-black);
+    transition: color var(--transition-fast);
+}
+
+.search-btn:hover {
+    color: var(--color-primary);
+}
+
+/* --- Hero Section (Redesigned) --- */
 .hero {
-    padding: 64px 0;
+    padding: 40px 0 64px 0;
     background-color: var(--color-white);
 }
 
-.hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.hero-featured {
+    display: flex;
     gap: 48px;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 56px;
 }
 
-.tag {
+.hero-info {
+    flex: 1;
+    max-width: 45%;
+}
+
+.hero-category {
     font-size: 13px;
     font-weight: 700;
+    color: var(--color-primary);
     text-transform: uppercase;
-    color: var(--color-gray-600);
-    letter-spacing: 0.5px;
     margin-bottom: 12px;
     display: block;
+    letter-spacing: 0.5px;
 }
 
-.hero-content h1 {
-    font-size: var(--font-size-h1);
+.hero-info h1 {
+    font-size: 38px;
     line-height: 1.1;
-    margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-black);
+    margin-bottom: 24px;
 }
 
 .hero-meta {
-    font-size: 16px;
+    font-size: 14px;
     color: var(--color-gray-600);
-    margin-bottom: 32px;
+    line-height: 1.5;
 }
 
-.hero-actions {
-    display: flex;
-    gap: 16px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 24px;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 16px;
-    transition: transform var(--transition-fast);
-}
-
-.btn:active {
-    transform: scale(0.98);
-}
-
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-}
-
-.btn-primary svg {
-    fill: currentColor;
-}
-
-.btn-primary:hover {
-    background-color: #cc2015;
-}
-
-.btn-secondary {
-    background-color: transparent;
-    border: 1px solid var(--color-black);
-    color: var(--color-black);
-}
-
-.btn-secondary:hover {
-    background-color: var(--color-gray-50);
+.hero-image {
+    flex: 1.2;
 }
 
 .hero-image img {
     width: 100%;
-    border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 0;
 }
+
+/* Hero Subgrid */
+.hero-subgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    border-top: 1px solid var(--color-gray-100);
+    padding-top: 32px;
+}
+
+.hero-sub-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-thumb {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.sub-thumb img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.sub-category {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.sub-title {
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.sub-meta {
+    font-size: 13px;
+    color: var(--color-gray-600);
+}
+
+/* Responsive Hero */
+@media (max-width: 900px) {
+    .hero-featured {
+        flex-direction: column-reverse;
+        /* Image on top? or text on bottom? Usually featured image top */
+        gap: 24px;
+    }
+
+    .hero-featured {
+        flex-direction: column;
+        /* Text top, image bottom or reverse. Let's stick to simple stacking */
+    }
+
+    .hero-image {
+        order: -1;
+        width: 100%;
+    }
+
+    .hero-info {
+        max-width: 100%;
+    }
+
+    .hero-subgrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-subgrid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-info h1 {
+        font-size: 28px;
+    }
+}
+
 
 /* --- Discover Section --- */
 .discover-section {
@@ -311,6 +410,14 @@ h4,
     /* IE/Edge */
     padding: 4px 0;
     /* Space for focus rings/shadows */
+    cursor: grab;
+    /* Indicate draggable */
+}
+
+.topics-wrapper.active {
+    cursor: grabbing;
+    user-select: none;
+    /* Prevent text selection while dragging */
 }
 
 .topics-wrapper::-webkit-scrollbar {
@@ -594,26 +701,21 @@ h4,
 }
 
 .speaker {
-    font-size: var(--font-size-meta);
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     color: var(--color-black);
     letter-spacing: 0.5px;
 }
 
 .title {
-    font-size: var(--font-size-h3);
-    /* Using H3 size for card titles as they are significant */
-    /* Or maybe purely 18px-20px if H3 is too big? Spec says H2/H3 24-28. Let's try H3 (24px) or fall back to 18px if too big. 24px might be big for cards.
-       Spec: "Body text: ~16–18px". Card titles are often slightly bigger.
-       Let's stick to 20px approx or define a card-title size.
-       But user said H2/H3 ~24px. */
-    font-size: 20px;
-    /* Compromise for card title */
-    line-height: 1.3;
-    margin-bottom: 8px;
-    font-weight: 700;
+    font-size: 18px;
+    /* Tighter title size typical of TED cards */
+    line-height: 1.25;
+    margin-bottom: 6px;
+    font-weight: 800;
+    /* Extra bold */
 }
 
 .title a {
@@ -1057,16 +1159,46 @@ h4,
 }
 
 /* --- Mobile Responsiveness --- */
-/* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .header-inner {
-        padding: 0 20px;
+        padding: 0 16px;
+        justify-content: space-between;
     }
 
+    /* 1. Burger Left */
     .mobile-menu-toggle {
+        display: flex;
+        order: 1;
+        margin-right: auto;
+        margin-right: 0;
+    }
+
+    /* 2. Logo Center */
+    .logo {
+        order: 2;
+        margin-right: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* 3. Actions */
+    .header-actions {
+        order: 3;
         display: flex;
     }
 
+    .membership-btn {
+        display: none;
+    }
+
+    .login-link {
+        font-size: 13px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    /* Nav Wrapper */
     .nav-wrapper {
         position: absolute;
         top: 72px;
@@ -1078,11 +1210,11 @@ h4,
         padding: 24px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         border-bottom: 1px solid var(--color-gray-100);
-
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
         transition: all 0.3s ease;
+        z-index: 99;
     }
 
     .nav-wrapper.active {
@@ -1113,38 +1245,114 @@ h4,
     }
 
     .header-actions .membership-btn {
+        display: inline-block;
         width: 100%;
         text-align: center;
     }
 
-    .site-header::after {
-        content: none;
-        /* Remove old hack */
+    /* Fix for Logo Centering */
+    .site-header {
+        position: relative;
+    }
+
+    .header-inner {
+        position: relative;
+        justify-content: flex-start;
+    }
+
+    .mobile-menu-toggle {
+        margin-right: 0;
+        z-index: 102;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-right: 0;
+        z-index: 101;
+    }
+
+    /* Hero Responsive Styles */
+    .hero {
+        padding: 0;
+        background-color: #000;
+        color: white;
+    }
+
+    .hero-slide {
+        padding: 0;
     }
 
     .hero-inner {
-        grid-template-columns: 1fr;
-        padding: 32px 0;
-        gap: 32px;
-    }
-
-    .hero-content {
-        order: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
     }
 
     .hero-image {
-        order: 1;
+        order: -1;
+        width: 100%;
+        position: relative;
+    }
+
+    .hero-image img {
+        border-radius: 0;
+        box-shadow: none;
+        aspect-ratio: 16/9;
+    }
+
+    .hero-content {
+        padding: 24px 20px 48px 20px;
+        background-color: #000;
+        order: 2;
     }
 
     .hero-content h1 {
-        font-size: 32px;
+        font-size: 24px;
+        color: white;
+    }
+
+    .tag {
+        color: var(--color-primary);
+    }
+
+    .hero-meta {
+        color: #999;
+        font-size: 14px;
+    }
+
+    .hero-arrow {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        width: 40px;
+        height: 40px;
+        top: 30vw;
+    }
+
+    .prev-arrow {
+        left: 12px;
+    }
+
+    .next-arrow {
+        right: 12px;
+    }
+
+    .btn-secondary {
+        border-color: white;
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.1);
     }
 
     .video-grid {
         grid-template-columns: 1fr;
-        /* Single column for mobile */
     }
 }
+
+
 
 /* Tablet / Small Laptop adjustments */
 @media (max-width: 1024px) {
@@ -1152,7 +1360,227 @@ h4,
         font-size: 36px;
     }
 
+
     .container {
         padding: 0 32px;
+    }
+}
+
+/* --- New Sections Styles --- */
+
+/* Trending, TED-Ed, TEDx Sections share similar grid structures (reusing .video-grid) */
+.section-trending,
+.section-ted-ed,
+.section-trending-tedx {
+    padding: 64px 0;
+    border-top: 1px solid var(--color-gray-100);
+}
+
+.section-ted-ed {
+    background-color: #000;
+    /* Dark mode style for TED-Ed usually? Or keeping white. Let's start with white to match base. */
+    background-color: var(--color-white);
+    /* Correction: Keep clean */
+}
+
+/* Countdown Section */
+.section-countdown {
+    padding: 64px 0;
+    background-color: #000;
+    color: white;
+}
+
+.countdown-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.countdown-content {
+    padding: 64px;
+    max-width: 600px;
+}
+
+.countdown-label {
+    background: #00FF00;
+    /* Neon green trademark */
+    color: black;
+    font-weight: 900;
+    padding: 4px 8px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+.countdown-content h2 {
+    font-size: 40px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.countdown-content p {
+    font-size: 18px;
+    margin-bottom: 32px;
+    opacity: 0.8;
+}
+
+.countdown-image {
+    flex-grow: 1;
+    height: 100%;
+    min-height: 400px;
+    background: #222;
+}
+
+.countdown-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 900px) {
+    .countdown-banner {
+        flex-direction: column;
+    }
+
+    .countdown-content {
+        padding: 32px;
+    }
+
+    .countdown-image {
+        width: 100%;
+        min-height: 250px;
+    }
+}
+
+/* Podcasts Section */
+.section-podcasts {
+    padding: 64px 0;
+    background-color: var(--color-gray-50);
+}
+
+.podcast-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.podcast-card {
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform var(--transition-fast);
+    cursor: pointer;
+}
+
+.podcast-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.podcast-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.podcast-info {
+    padding: 16px;
+}
+
+.podcast-info h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.podcast-info p {
+    font-size: 14px;
+    color: var(--color-gray-600);
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .podcast-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Newsletters Main Section */
+.section-newsletters-main {
+    padding: 64px 0;
+    background-color: #E6F0F6;
+    /* Light blueish tint */
+}
+
+.newsletter-banner-main {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Simplified for demo */
+    padding: 48px;
+}
+
+.content-side {
+    max-width: 600px;
+}
+
+.newsletter-cards-row {
+    display: flex;
+    gap: 24px;
+    margin: 32px 0;
+}
+
+.nl-card {
+    background: #fff;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 4px;
+    padding: 24px;
+    flex: 1;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nl-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.nl-card h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.nl-card p {
+    font-size: 13px;
+    color: var(--color-gray-600);
+}
+
+.nl-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nl-btn:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .newsletter-cards-row {
+        flex-direction: column;
     }
 }

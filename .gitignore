@@ -1,0 +1,39 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Backups and temporary files
+index_backup.html
+*.bak
+style-guide.html
+
+# Scripts and Tools
+*.py
+__pycache__/
+cleanup_html.py
+
+
+# Reference files (Downloaded HTML/Assets)
+TED_ Ideas change everything.html
+TED_ Ideas change everything_files/
+
+# Brain/Artifacts (Optional, depending on if you want to commit these)
+# .gemini/
