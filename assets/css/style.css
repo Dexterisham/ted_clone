@@ -1535,18 +1535,339 @@ h4,
 /* --- New Sections Styles --- */
 
 /* Trending, TED-Ed, TEDx Sections share similar grid structures (reusing .video-grid) */
-.section-trending,
-.section-ted-ed,
-.section-trending-tedx {
+/* --- Trending Master Section --- */
+.trending-master-section {
     padding: 64px 0;
     border-top: 1px solid var(--color-gray-100);
 }
 
-.section-ted-ed {
-    background-color: #000;
-    /* Dark mode style for TED-Ed usually? Or keeping white. Let's start with white to match base. */
-    background-color: var(--color-white);
-    /* Correction: Keep clean */
+.trending-main-header {
+    border-top: 1px solid #111;
+    padding-top: 12px;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trending-main-header h2 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Topic Hero Block (AI, TED-Ed) --- */
+.topic-hero-block {
+    margin-bottom: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Separator between blocks */
+    padding-bottom: 64px;
+}
+
+.topic-hero-block:last-child {
+    border-bottom: none;
+    margin-bottom: 40px;
+}
+
+.topic-header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 50/50 split */
+    gap: 40px;
+    margin-bottom: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 24px;
+}
+
+.topic-huge-title {
+    font-size: 160px;
+    /* Massive font size */
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -6px;
+    margin: 0;
+}
+
+.topic-desc-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.topic-description {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.topic-browse-link {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: #111;
+}
+
+/* Main Hero Image (Full Width) */
+.topic-hero-image {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.topic-hero-image a {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    /* Or adjust based on image natural ratio if needed, but 16/9 is standard video */
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.topic-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Topic Text Grid (4 Columns) */
+.topic-text-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    /* Divide X thin logic from Tailwind can be mimicked with borders if needed, 
+       but gap is cleaner. User showed divide-x-thin vertical lines. Let's add borders. */
+}
+
+/* Main Feature Text Block (Spans 2 Cols) */
+.main-feature-text {
+    grid-column: span 2;
+    padding-right: 20px;
+    /* Spacing for visual separation if using border */
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Sub Items */
+.sub-item-card {
+    grid-column: span 1;
+    padding-left: 20px;
+    /* Inner padding */
+}
+
+/* Add vertical divider to the first sub-item to separate from main text? 
+   Actually, the main feature text has a right border. 
+   The layout is: [Main (2col)] | [Sub 1] | [Sub 2]
+   So Main needs right border. Sub 1 needs right border. Sub 2 no border.
+*/
+.sub-item-card:nth-child(2) {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sub-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.sub-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sub-text .sidebar-title {
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+/* Typography Overrides for Main Text */
+.main-feature-text .feature-title {
+    font-size: 36px;
+    /* Larger title for main feature */
+    letter-spacing: -1.5px;
+    margin-bottom: 12px;
+}
+
+.main-feature-text .feature-excerpt {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #111;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    /* Standard property */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+/* --- TEDx List (Refined 2.0 - Grid Return) --- */
+.tedx-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    /* Space between cards */
+}
+
+/* Base Card Style - Static Gray Card */
+.tedx-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px;
+    margin: 0;
+    /* Reset margins */
+    background-color: #F9F9F9;
+    /* Static light gray background */
+    border-radius: 4px;
+    border-bottom: none;
+    /* No border needed for cards */
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* Polished springy transition */
+    cursor: pointer;
+    /* Clickable */
+    position: relative;
+    z-index: 1;
+}
+
+.tedx-card:last-child {
+    border-bottom: none;
+}
+
+/* Hover Effect: 3D Pop (Scale + Shadow) */
+.tedx-card:hover {
+    background-color: #fff;
+    /* White bg for contrast when popping */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    /* Deep shadow */
+    transform: scale(1.02);
+    /* Pop out */
+    z-index: 10;
+}
+
+.tedx-card:hover .tedx-title a {
+    color: #111;
+    /* Keep black */
+}
+
+/* Category Handling */
+.tedx-content .feature-category {
+    color: #E62B1E;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.rank-num {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1;
+    color: #111;
+    width: 40px;
+    text-align: center;
+    /* Center visuals */
+    flex-shrink: 0;
+    font-feature-settings: "tnum";
+}
+
+.tedx-content {
+    flex-grow: 1;
+}
+
+.tedx-title {
+    font-size: 22px;
+    /* Slightly larger for card */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+
+.tedx-title a {
+    color: #111;
+    text-decoration: none;
+}
+
+.tedx-meta {
+    font-size: 13px;
+    color: #767676;
+}
+
+/* Responsiveness for Trending Section */
+@media (max-width: 900px) {
+
+    /* Header Grid */
+    .topic-header-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .topic-huge-title {
+        font-size: 80px;
+        /* Scale down from 160px */
+    }
+
+    /* Content Grid */
+    .topic-text-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .topic-hero-image {
+        margin-bottom: 24px;
+    }
+
+    .main-feature-text {
+        grid-column: span 1;
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
+
+    .main-feature-text .feature-title {
+        font-size: 28px;
+    }
+
+    .sub-item-card {
+        padding-left: 0;
+        grid-column: span 1;
+        margin-bottom: 24px;
+    }
+
+    .sub-item-card:nth-child(2) {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 24px;
+    }
+
+    .sidebar-item {
+        grid-template-columns: 100px 1fr;
+        /* Smaller thumb */
+    }
+
+    /* TEDx Grid Mobile */
+    .tedx-grid {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+        gap: 16px;
+    }
+
+    .tedx-card {
+        padding: 24px;
+    }
 }
 
 /* Countdown Section */
