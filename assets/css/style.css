@@ -325,10 +325,12 @@ h4,
         background-color: var(--color-white);
     }
 
-    .hero-container-relative {
+    .hero .hero-container-relative {
         padding: 0;
         /* Remove container padding for full-width carousel */
         max-width: 100%;
+        width: 100%;
+        /* Ensure full width */
     }
 
     /* Track becomes a carousel */
@@ -380,7 +382,11 @@ h4,
 
     .featured-slide .hero-image img,
     .sub-slide .sub-thumb img {
+        width: 100%;
+        height: 100%;
+        /* Ensure it fills the height of the aspect ratio container */
         aspect-ratio: 16/9;
+        object-fit: cover;
     }
 
     /* Text Area (Bottom) */
