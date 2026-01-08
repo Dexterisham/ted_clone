@@ -29,7 +29,7 @@
 
     --spacing-section: 64px;
 
-    --font-stack: "Inter", "Helvetica Neue", Arial, sans-serif;
+    --font-stack: "Inter", sans-serif;
 
     --container-max-width: 1280px;
     --container-padding: 24px;
@@ -99,13 +99,14 @@ h4,
 /* --- Header --- */
 .site-header {
     height: 72px;
-    border-bottom: 1px solid var(--color-gray-100);
+    border-bottom: 1px solid #E5E5E5;
     position: sticky;
     top: 0;
     background: var(--color-white);
-    z-index: 100;
+    z-index: 1000;
     display: flex;
     align-items: center;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .header-inner {
@@ -118,24 +119,36 @@ h4,
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-right: 40px;
+    gap: 10px;
+    margin-right: 32px;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 26px;
+    /* Precise height for TED logo */
+    width: auto;
 }
 
 .logo-tagline {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
-    /* Regular weight */
-    color: var(--color-gray-600);
-    letter-spacing: normal;
+    color: #666;
+    letter-spacing: -0.01em;
     white-space: nowrap;
+    position: relative;
+    top: 2px;
+    /* Visual optical alignment */
 }
 
 .nav-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+    /* Push everything to the right */
     flex-grow: 1;
+    gap: 32px;
+    /* Space between Main Nav and Header Actions */
 }
 
 .mobile-menu-toggle {
@@ -159,7 +172,8 @@ h4,
 
 .main-nav {
     display: flex;
-    gap: 28px;
+    align-items: left;
+    gap: 24px;
 }
 
 .main-nav a {
@@ -168,7 +182,8 @@ h4,
     color: var(--color-black);
     padding: 8px 0;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.02em;
+    position: relative;
 }
 
 .main-nav a:hover {
@@ -178,34 +193,37 @@ h4,
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
 }
 
 .login-link {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-black);
-    letter-spacing: 0.5px;
+    letter-spacing: 0.02em;
+}
+
+.login-link:hover {
+    color: var(--color-primary);
 }
 
 .membership-btn {
-    font-size: 13px;
-    font-weight: 800;
-    /* Extra bold */
+    font-size: 12px;
+    font-weight: 700;
     color: var(--color-white);
     background-color: var(--color-primary);
     border: 1px solid var(--color-primary);
-    padding: 10px 16px;
+    padding: 10px 14px;
     border-radius: 4px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all var(--transition-fast);
+    letter-spacing: 0.02em;
+    transition: all 0.2s ease;
+    line-height: 1;
 }
 
 .membership-btn:hover {
     background-color: #cc2015;
-    /* Darker red */
     border-color: #cc2015;
 }
 
@@ -215,8 +233,10 @@ h4,
     justify-content: center;
     width: 32px;
     height: 32px;
-    color: var(--color-black);
-    transition: color var(--transition-fast);
+    color: #333;
+    transition: color 0.2s ease;
+    background: transparent;
+    border: none;
 }
 
 .search-btn:hover {
