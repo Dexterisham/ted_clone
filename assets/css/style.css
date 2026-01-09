@@ -2488,3 +2488,291 @@ h4,
         width: 100%;
     }
 }
+
+/* --- Shorts Section --- */
+.shorts-section {
+    padding: 48px 0;
+    margin-bottom: 24px;
+    display: none;
+    /* Hidden by default (Desktop) */
+}
+
+@media (max-width: 900px) {
+    .shorts-section {
+        display: block;
+        /* Show on mobile/tablet */
+    }
+}
+
+.shorts-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.shorts-header h2 {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1;
+}
+
+.badge-new {
+    background-color: #E62B1E;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.shorts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.short-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 9/16;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.short-card:hover {
+    transform: translateY(-4px);
+}
+
+.short-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.short-overlay {
+    position: absolute;
+    bottom: 24px;
+    left: 16px;
+    right: 16px;
+    z-index: 2;
+}
+
+.short-name-tag {
+    background-color: #E62B1E;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 6px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.short-role {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+/* --- Recommended Section (Refined) --- */
+.recommended-section {
+    padding: 48px 0;
+    border-top: 1px solid #ccc;
+    /* Separator */
+    margin-bottom: 48px;
+}
+
+.section-header-line {
+    border-top: 2px solid #000;
+    padding-top: 16px;
+    margin-bottom: 32px;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header-line h2 {
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.browse-link {
+    font-size: 13px;
+    text-decoration: underline;
+    font-weight: 700;
+    color: #111;
+}
+
+.rec-grid-complex {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    /* Custom ratio */
+    gap: 40px;
+}
+
+/* Common Rec Styles */
+.rec-content .rec-category,
+.video-content .video-category {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.text-red {
+    color: #E62B1E;
+}
+
+.rec-title,
+.video-title {
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.rec-title.large {
+    font-size: 24px;
+}
+
+.rec-title {
+    font-size: 18px;
+}
+
+.rec-desc {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.rec-meta,
+.video-meta {
+    font-size: 12px;
+    color: #767676;
+}
+
+.rec-thumb-large img,
+.rec-thumb-medium img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border-radius: 4px;
+}
+
+.rec-list-item {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 24px;
+}
+
+.rec-list-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.rec-list-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+/* --- Listing Sections (Newest / Popular) --- */
+.listing-section {
+    padding-bottom: 64px;
+}
+
+.listing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.video-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-thumb {
+    position: relative;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.video-thumb img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover .video-thumb img {
+    transform: scale(1.05);
+    /* Zoom effect */
+}
+
+.video-title {
+    font-size: 16px;
+}
+
+.video-title a {
+    color: #111;
+    transition: color 0.2s ease;
+}
+
+.video-card:hover .video-title a {
+    color: #E62B1E;
+}
+
+/* Responsive New Sections */
+@media (max-width: 900px) {
+    .shorts-grid {
+        display: flex;
+        /* Horizontal scroll on mobile */
+        overflow-x: auto;
+        gap: 16px;
+        padding-bottom: 16px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .short-card {
+        min-width: 160px;
+        /* Smaller width for mobile scroll */
+        aspect-ratio: 9/16;
+        scroll-snap-align: start;
+    }
+
+    .rec-grid-complex,
+    .listing-grid {
+        grid-template-columns: 1fr;
+        /* Stack everything */
+        gap: 32px;
+    }
+
+    /* Adjust list items on mobile to regular cards? Or keep list? */
+    .rec-list-col {
+        border-top: 1px solid #ccc;
+        padding-top: 32px;
+    }
+
+    .shorts-header h2 {
+        font-size: 20px;
+    }
+}
