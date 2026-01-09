@@ -269,25 +269,73 @@ h4,
     grid-column: 1 / -1;
     /* Span all 4 columns */
     display: flex;
-    gap: 48px;
-    align-items: flex-start;
-    margin-bottom: 32px;
+    gap: 64px;
+    /* Increased gap for better separation */
+    align-items: center;
+    /* Center vertically */
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Separator line */
 }
 
 .featured-slide .hero-info {
     flex: 1;
-    max-width: 45%;
+    max-width: 50%;
+    /* Text takes half */
+}
+
+/* Typography Redesign */
+.hero-category {
+    color: #E62B1E;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.featured-slide .hero-info h1 {
+    font-size: 42px;
+    /* Reduced from default H1 or massive size */
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: #111;
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.hero-meta {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
 }
 
 .featured-slide .hero-image {
-    flex: 1.2;
+    flex: 1;
+    /* Image takes other half */
     position: relative;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .featured-slide .hero-image img {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
+    display: block;
 }
 
 /* Sub Slides (Desktop) */
