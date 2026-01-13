@@ -313,6 +313,7 @@ h4,
     margin-bottom: 16px;
     display: -webkit-box;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -464,7 +465,7 @@ h4,
     }
 
     .sub-title a {
-        font-size: 24px;
+        font-size: 20px;
         color: white;
         text-decoration: none;
         background: none;
@@ -665,18 +666,30 @@ h4,
 
 @media (max-width: 768px) {
     .discover-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px 0;
+        /* Vertical gap 16px, Horizontal 0 (controlled by justify-content) */
     }
 
-    .slider-container {
-        width: 100%;
+    .discover-title {
+        order: 1;
+        margin-right: 0;
     }
 
     .see-all-topics {
-        align-self: flex-end;
-        /* Or hide/move */
+        order: 2;
+        align-self: auto;
+    }
+
+    .slider-container {
+        order: 3;
+        width: 100%;
+        /* Force new line */
+        margin-top: 8px;
+        /* Optional extra spacing */
     }
 }
 
