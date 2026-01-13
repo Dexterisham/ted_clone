@@ -2837,3 +2837,189 @@ h4,
         font-size: 20px;
     }
 }
+
+/* --- Countdown Section (Added) --- */
+.section-countdown {
+    padding: 64px 0;
+    background-color: #000;
+    color: white;
+}
+
+.countdown-banner {
+    display: flex;
+    align-items: flex-start;
+    /* Align Top to leave space below image */
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.countdown-content {
+    flex: 1;
+}
+
+.countdown-label {
+    background-color: #00FF00;
+    /* Bright Neon Green */
+    color: white;
+    /* User requested White text */
+    font-weight: 900;
+    text-transform: uppercase;
+    display: block;
+    padding: 8px 0;
+    margin-bottom: 24px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.section-countdown h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.section-countdown p {
+    font-size: 18px;
+    margin-bottom: 32px;
+    display: block;
+    color: #ddd;
+}
+
+.section-countdown .btn {
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    padding: 14px 24px;
+    font-size: 15px;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.section-countdown .btn:hover {
+    background-color: #f2f2f2;
+}
+
+.countdown-image {
+    flex: 1;
+}
+
+.countdown-image img {
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .countdown-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        /* Align Left */
+        text-align: left;
+        /* Text Left */
+    }
+
+    .countdown-image {
+        width: 100%;
+        margin-bottom: 24px;
+        /* Space between image and text */
+    }
+
+    .countdown-label {
+        /* Ensure label still looks good, maybe full width */
+        width: 100%;
+    }
+}
+
+/* --- Podcast Section --- */
+.podcast-section {
+    padding: 0 0 64px 0;
+}
+
+.podcast-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+
+.podcast-card {
+    padding: 0 24px;
+    border-right: 1px solid #e5e5e5;
+}
+
+.podcast-card:first-child {
+    padding-left: 0;
+}
+
+.podcast-card:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.podcast-thumb {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.podcast-thumb img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.duration-badge-black {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: black;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.podcast-category {
+    color: #E62B1E;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.podcast-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.podcast-title a {
+    color: #111;
+}
+
+.podcast-meta {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+    .podcast-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .podcast-card {
+        padding: 0;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 24px;
+    }
+
+    .podcast-card:last-child {
+        border-bottom: none;
+    }
+}
